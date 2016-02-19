@@ -74,7 +74,7 @@ public class MainActivityFragment extends Fragment {
 
     /**
      * A snackbar is similar to a toast but is a bar that appears on the bottom
-     * of the screen with an optional button
+     * of the screen with an optional button.
      */
     private void showSnackbar() {
         // Display a snackbar on the bottom of the screen saying 'Android Is AWESOME!' with
