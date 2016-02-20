@@ -48,7 +48,7 @@ public class MainActivityFragment extends Fragment {
      * Roll the dice and put the output in the textview
      */
     private void rollDice() {
-        // output_textview is the id in the xml
+        // output_textview is the id in the xml 
         // getView() gets the root view
         TextView outputTextView = (TextView) getView().findViewById(R.id.output_textview);
 
