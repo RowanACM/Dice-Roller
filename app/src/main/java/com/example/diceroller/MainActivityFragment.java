@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- * A placeholder fragment containing a simple view.
+ * A fragment inside of the activity. Contains most of the app
  */
 public class MainActivityFragment extends Fragment {
 
@@ -20,6 +20,7 @@ public class MainActivityFragment extends Fragment {
 
     /**
      * Create the Fragment
+     * You should never need to call this method
      * Reminder: Never call getView() within this method
      * Instead use the rootView to interact with the views
      */
@@ -48,8 +49,8 @@ public class MainActivityFragment extends Fragment {
      * Roll the dice and put the output in the textview
      */
     private void rollDice() {
-        // output_textview is the id in the xml 
-        // getView() gets the root view
+        // output_textview is the id in the xml
+        // getView() gets the root view of the fragment
         TextView outputTextView = (TextView) getView().findViewById(R.id.output_textview);
 
         // Random integer 1 to 6 inclusive
@@ -58,6 +59,7 @@ public class MainActivityFragment extends Fragment {
         // Make sure you cast randomNumber to a String
         outputTextView.setText("" + randomNumber);
 
+        // Show a toast if the user rolled a 6 or snackbar if they rolled a 1
         if(randomNumber == 6)
             showCongratulationsToast();
         else if(randomNumber == 1)
@@ -65,10 +67,11 @@ public class MainActivityFragment extends Fragment {
     }
 
     /**
-     * A toast is a small popup on the bottom of the
-     * screen that goes away after a few seconds
+     * A toast is a small popup on the bottom of the screen that goes away after a few seconds
+     * The user cannot interact with a toast or dismiss it early
      */
     private void showCongratulationsToast() {
+        // Make sure you call .show() otherwise it will be created but not displayed
         Toast.makeText(getActivity(), "Congratulations! You rolled a 6", Toast.LENGTH_SHORT).show();
     }
 
@@ -85,6 +88,7 @@ public class MainActivityFragment extends Fragment {
                     public void onClick(View v) {
                         Toast.makeText(getActivity(), "HELLO", Toast.LENGTH_SHORT).show();
                     }
+                    // Make sure you call .show() otherwise it will be created but not displayed
                 }).show();
     }
 }
